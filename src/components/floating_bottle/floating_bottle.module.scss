@@ -1,0 +1,44 @@
+.floater {
+  height: 100%;
+  width: 100%;
+  @include flexCenter;
+  position: fixed;
+  top: -1000px;
+  left: 0;
+  background-color: transparent;
+  z-index: 2;
+
+  .bottle {
+    height: 60vh;
+  // background-color: red !important;
+  width: auto;
+
+    @include respond-above(md) {
+      height: 70vh;
+    }
+  }
+
+  .wrap {
+    position: relative;
+    @include respond-below(md) {
+      transform: scale(0.8);
+    }
+
+    .splash {
+      position: absolute;
+      bottom: -35px;
+      right: 80px;
+
+      img {
+        width: 100px !important;
+        height: 100px !important;
+        filter: invert(88%) sepia(8%) saturate(1183%) hue-rotate(314deg)
+          brightness(101%) contrast(89%);
+      }
+
+      &.left {
+        transform: scaleX(-1);
+      }
+    }
+  }
+}
