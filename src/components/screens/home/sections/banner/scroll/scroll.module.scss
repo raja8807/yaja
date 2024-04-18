@@ -1,0 +1,39 @@
+.scroll {
+  position: absolute;
+  top: 34%;
+  background-color: black;
+  width: 100%;
+  padding: 10px 0;
+  color: $color_2;
+  z-index: 2;
+  font-weight: 800;
+  display: flex;
+  overflow: hidden;
+  gap: 0 20px;
+  font-size: 22px;
+  .scrollHolder {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    animation: scroll 14s linear infinite;
+
+    .scrItem {
+      display: flex;
+      align-items: center;
+      span {
+        margin: 0px 20px;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translate(0);
+  }
+
+  to {
+    transform: translate(-100%);
+  }
+}

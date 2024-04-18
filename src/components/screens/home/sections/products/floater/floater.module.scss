@@ -1,0 +1,50 @@
+.floater {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+
+  .container {
+    position: relative;
+    height: 100%;
+    .obj {
+      height: 100px;
+      width: 100px;
+    //   background-color: black;
+      position: absolute;
+      top: calc(50% - 25px);
+      left: calc(50% - 25px);
+      //   transform: translate(-50%,-50%);
+
+      &.obj_1 {
+        transform: translate(-150%, -100px);
+      }
+      &.obj_2 {
+        transform: translate(70%, 120px);
+      }
+      &.obj_3 {
+        transform: translate(60%, -120px);
+      }
+      &.obj_4 {
+        transform: translate(-100%, 100px);
+      }
+
+      @include respond-below(md) {
+        &.obj_1 {
+          transform: translate(-150%, -100px);
+        }
+        &.obj_2 {
+          transform: translate(70%, 120px);
+        }
+        &.obj_3 {
+          transform: translate(60%, -120px);
+        }
+        &.obj_4 {
+          transform: translate(-100%, 100px);
+        }
+      }
+    }
+  }
+}

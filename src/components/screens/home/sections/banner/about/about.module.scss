@@ -1,0 +1,59 @@
+.aboutSection {
+  background-image: linear-gradient($color_3, $color_3, $color_3);
+  height: 100dvh;
+  position: relative;
+  // padding: 100px 0;
+  .bg {
+    position: absolute;
+    background-color: $color_6;
+    height: 50vh;
+    width: 50vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+
+  .labels {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    z-index: 10;
+
+    .labelWrap {
+      display: flex;
+      flex-direction: column;
+      gap: 100px;
+
+      > div {
+        display: flex;
+        gap: 10px;
+        p {
+          font-size: 16px;
+          font-weight: 600;
+          margin-top: 10px;
+        }
+        position: relative;
+        .arrowR {
+          position: absolute;
+          left: -100px;
+          width: 100px;
+          // transform: rotate(50deg);
+        }
+        .arrowL {
+          position: absolute;
+          right: -100px;
+          width: 100px;
+          // transform: scaleX(-1) scaleY(-1) rotate(90deg);
+        }
+      }
+    }
+
+    @include respond-below(md) {
+      display: none;
+    }
+  }
+}

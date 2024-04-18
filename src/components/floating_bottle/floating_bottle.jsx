@@ -3,7 +3,7 @@ import styles from "./floating_bottle.module.scss";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const FloatingBottle = ({ scrollRef,width }) => {
+const FloatingBottle = ({ scrollRef, width }) => {
   console.log(scrollRef);
 
   const { scrollYProgress: scrollYProgress1 } = useScroll({
@@ -13,30 +13,35 @@ const FloatingBottle = ({ scrollRef,width }) => {
   });
   const { scrollYProgress: scrollYProgress2 } = useScroll({
     container: scrollRef.current,
-    offset: ["0.15 start", "end start"],
+    offset: ["start start", "end start"],
     target: scrollRef,
   });
   // const { scrollYProgress } = useScroll({container:scrollRef.crrent,offset:["start end", "end end"]});
 
-  
-
   const xPrgogress = useTransform(
     scrollYProgress1,
     [0.2, 0.8],
-    [0, width < 600 ? 0 : 400]
+    [0,  0]
   );
+
   const xPrgogress2 = useTransform(scrollYProgress2, [0, 1], [0, -1000]);
 
   return (
     <div className={styles.floater}>
       <motion.div
-        animate={{ y: [0, 1000, 1150, 950, 1000] }}
-        transition={{ ease: "easeInOut", bounce: 1, duration: 1 }}
-        // style={{}}
+        animate={{ y: [0, 1300, 850, 1000], rotateZ: [0, 40, 0, -20, 0] }}
+        transition={{
+          // ease: "easeInOut",
+          // bounce: 1,
+          duration: 1.2,
+        }}
       >
         <div className={styles.wrap}>
           <motion.div
-            style={{ translateX: xPrgogress, translateY: xPrgogress2 }}
+            style={{
+              // translateX: xPrgogress,
+              translateY: xPrgogress2,
+            }}
             animate={["float"]}
             whileHover={["rotate", "grow"]}
             whileTap={["rotate", "grow"]}

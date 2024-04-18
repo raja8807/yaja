@@ -3,6 +3,7 @@ import styles from "./tag_line.module.scss";
 import { COLORS } from "@/constants/styles";
 
 import { motion } from "framer-motion";
+import { Image } from "react-bootstrap";
 
 // import { Playb as TagFont } from "next/font/google";
 
@@ -38,6 +39,13 @@ const TagLine = () => {
         e.preventDefault();
       }}
     >
+      {/* <motion.div
+      initial={{ scale: 0 }}
+      animate={{ scale: 1 }}
+      transition={{ ease: "easeIn", delay: 0.4, duration: 0.2 }}
+      >
+        <Image src="/logo/logo.png"  alt="logo" width={300}/>
+      </motion.div> */}
       <h1>
         <motion.span
           style={{ color: clrs[0] }}
@@ -64,8 +72,6 @@ const TagLine = () => {
           LOVE
         </motion.span>
       </h1>
-      {/* <h1>DRINK WHAT</h1>
-    <h1 className={styles.l}>YOU LOVE</h1> */}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 const { Container } = require("react-bootstrap");
 
-const CustomContainer = ({ children }) => {
-  return <Container>{children}</Container>;
+const CustomContainer = ({ children, ...props }) => {
+  return <Container {...props}>{children}</Container>;
 };
 
 export default CustomContainer;

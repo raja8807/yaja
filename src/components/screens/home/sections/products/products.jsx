@@ -2,7 +2,8 @@ import { Image } from "react-bootstrap";
 import styles from "./products.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { useScroll, motion, useTransform } from "framer-motion";
-import { COLORS } from "@/constants/styles";
+import Floater from "./floater/floater";
+// import { COLORS } from "@/constants/styles";
 
 const ProductBanner = ({ data, length }) => {
   const { id, name, color, textColor, index } = data;
@@ -59,6 +60,25 @@ const ProductBanner = ({ data, length }) => {
       ref={ref}
     >
       <div className={styles.wrap}>
+        {/* <object
+          data="/assets/svg/splash2.svg"
+          width="500"
+          height="500"
+          className={styles.splash}
+          
+        >
+          {" "}
+        </object> */}
+        {/* <Image
+          src="/assets/svg/splash2.svg"
+          fluid
+          alt="splash"
+          className={styles.splash}
+          style={{
+            color:color,
+          }}
+        /> */}
+        <Floater name={name} />
         <div className={styles.txt}>
           <motion.h2
             style={{
@@ -140,7 +160,6 @@ const ProductBanner = ({ data, length }) => {
             <spn>{name}</spn>
           </motion.h2>
         </div>
-
         <motion.div
           className={styles.img}
           animate={["float"]}
@@ -169,7 +188,15 @@ const ProductBanner = ({ data, length }) => {
             },
           }}
         >
-          <Image className={styles.bottle} src={`/bottle.png`} fluid alt="x" />
+          <Image
+            className={styles.bottle}
+            src={`/images/flavours/${name}.png`}
+            fluid
+            alt="x"
+            style={{
+              filter: `drop-shadow(0px 0px 20px ${textColor})`,
+            }}
+          />
         </motion.div>
       </div>
     </div>
@@ -181,37 +208,22 @@ const Products = () => {
     {
       id: "1",
       name: "LYCHEE",
-      // color: "#ab0d26",
-      // color: "#ec2f55",
-      color: "#ab0d26",
-      textColor: "#f3e2ea",
+      textColor: "#ab0d26",
+      color: "#f3e2ea",
     },
     {
       id: "2",
       name: "MANGO",
-      // color: "#ffc324",
-      color: "#ff8518",
-      textColor:'#ffdcb4'
+      textColor: "#ff8518",
+      color: "#ffdcb4",
     },
 
     {
       id: "3",
       name: "STRAWBERRY",
-      // color: "#ab0d26",
-      // color: "#ec2f55",
-      color: '#db1515',
-      textColor:'#ffb7b7'
+      textColor: "#db1515",
+      color: "#ffb7b7",
     },
-    // {
-    //   id: "3",
-    //   name: "LEMON",
-    //   color: "orange",
-    // },
-    // {
-    //   id: "4",
-    //   name: "Aaaaaa",
-    //   color: "red",
-    // },
   ];
 
   return (

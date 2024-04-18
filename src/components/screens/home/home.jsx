@@ -7,7 +7,7 @@ const HomeScreen = () => {
     <div className={styles.home}>
       <BannerSection />
       <Products />
-      <section>
+      {/* <section>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error
         voluptatem ipsa eum corrupti ipsum quidem facere reiciendis quaerat illo
         similique omnis hic necessitatibus quisquam impedit laborum, sequi
@@ -119,7 +119,7 @@ const HomeScreen = () => {
         exercitationem quo amet est excepturi? Pariatur, amet delectus libero
         rerum asperiores vel magni deleniti at minus veritatis voluptatem dolor
         ut doloribus dolorem ducimus quaerat sapiente, rem atque!
-      </section>
+      </section> */}
     </div>
   );
 };
